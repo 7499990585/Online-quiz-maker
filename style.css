@@ -1,0 +1,417 @@
+*{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+}
+body{
+          color: rgb(255, 255, 255);
+          background-color: black;
+          overflow: hidden;
+
+}
+.header{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 10px 5%;
+             background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 100;
+       
+}
+.logo{
+          font-size: 32px;
+          color: #fff;
+          text-decoration: none;
+          font-weight: 700;
+          filter: drop-shadow(0 0 5px black);
+}
+.navbar a{
+          font-size: 18px;
+          color: rgb(255, 255, 255);
+          text-shadow:0 0 5px black ;
+          text-decoration: none;
+          font-weight: 500;
+          margin-left: 35px;
+          transition: 0.3s;
+}
+.navbar a:hover{
+          color: #2efff1;
+          font-weight: 500;
+          text-shadow:0 0 5px black ;
+}
+.main{
+          min-height: 100vh;
+          background-size: cover;
+          background-image: url(bg\ img.png);
+          transition: 0.3s ease;
+          pointer-events: auto;
+}
+.main.active{
+   filter: blur(5px);
+   pointer-events: none;
+
+}
+.container{
+   display: flex;
+   height: 100vh;
+   width: 200%;
+}
+.Home{
+         position: relative;
+         left: -50%;
+          display: flex;
+          height: 100vh;
+          width: 100%;
+           align-items: center;
+           justify-content: center;
+
+}
+.Home-contant{
+          max-width: 550px;
+}
+.Home-contant h1{
+          margin-bottom:10px ;
+          font-size: 38px;
+          font-weight: 700;
+          text-shadow:0 0 5px black ;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+}
+.start-btn{
+          background-color: rgb(28, 250, 47);
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin-left: 200px;
+          margin-top: 10px;
+          height: 25px;
+          width: 20vh;
+          font-weight: 600;
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.732);
+          border: none;
+          border-radius: 0.1rem;
+           opacity: 0.7px;
+          box-shadow: 0 0 5px rgba(249, 166, 10, 0.3);
+          transition: 0.5s;
+}  
+.start-btn:hover{
+         background-color: rgba(0, 255, 13, 0.454);
+         border: 2px solid rgb(13, 255, 9);
+         color:rgb(51, 51, 51) ;
+}  
+.Home-contant p{
+          text-shadow:0 0 10px rgba(0, 0, 0, .3) ;
+         font-size: 16px;
+         font-weight: 300;
+         word-spacing: 1px;
+         letter-spacing: 0.5px;
+     
+}
+.popup-info{
+          position: absolute;
+          top: 15%;
+          left: 30%;
+          transform: translate(-50% -50%) scale(0.9);
+          width: 500px;
+           padding: 10px 25px;
+           background-color:slategrey;
+          border-radius: 6px;
+          opacity: 0;
+          pointer-events: none;
+          transition: 0.3s;
+}
+.popup-info.active{
+          opacity: 1;
+          pointer-events: auto;
+          transform: translate(-50% -50%) scale(1);
+}
+.popup-info h2{
+   border-bottom: 1px solid #999;
+   padding: 5px;
+          font-size: 30px;
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: 700;
+          
+}
+
+.popup-info .info{
+   padding-top: 10px;
+          display: inline-block;
+          font-size: 16px;
+          color: #ffffff;
+          font-weight: 500;
+          margin: 4px 0;
+          
+}
+.popup-info .btn-group{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #999;
+          margin: 10px;
+          padding: 15px 0 7px;
+}
+.popup-info .btn-group .info-btn{
+          display: inline-flex;                    /* I learn new topic here */
+          align-items: center;
+          justify-content: center;
+          width: 130px;
+          height: 45px;
+          outline: none;
+          background: #1b99f2;
+          border: 2px solid rgb(60, 139, 218);
+          border-radius: 0.5rem;
+          font-size: 20px;
+          color: #f8f8f8;
+          text-decoration: none;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+          cursor: pointer;
+}
+ 
+.popup-info .btn-group .info-btn:nth-child(1){
+          background: transparent;
+          color: rgb(255, 255, 255);
+}
+.popup-info .btn-group .info-btn:nth-child(1):hover{
+          background: rgb(60, 139, 218);
+          /* border: 2px solid #f62dc4;    */
+          color: #fff;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2):hover{
+          background: rgb(60, 139, 218);
+          color: #ffffff;     
+}
+.quiz-section{
+   position: relative;
+   left: -50%;
+   /* left: 0; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   background: rgb(0, 0, 0);
+   transition: .8s ease-in-out;
+   transition-delay: 0.25s;
+   z-index: 100;
+}
+.quiz-section.active{
+   left: 0;
+}
+.quiz-section .quiz-box{
+   position: relative;
+   width: 500px;
+   background: transparent;
+   border: 2px solid slategrey;
+   border-radius: 0.5rem;
+   padding: 20px 30px;
+   opacity: 0;
+   pointer-events: none;
+   transform: scale(.9);
+   
+}
+.quiz-section .quiz-box.active{
+   opacity: 1;
+   pointer-events: auto;
+   transform: scale(1);
+   transition: 1s ease;
+   transition-delay: 1s;
+}
+
+.quiz-box h1{
+   font-size: 32px;
+   text-align: center;
+   margin-bottom: 10px;
+   background: linear-gradient(45deg, transparent, slategrey,transparent );       /* I learn new topic here */
+}     
+
+.quiz-box .quiz-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 0px;
+   border-bottom: 1px solid rgba(112, 128, 144, 0.862);
+}
+
+.quiz-header span{
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.quiz-header .header-score{
+   border-radius: 3px;
+   background: rgba(112, 128, 144, 0.82);
+   padding: 7px ;
+}
+
+.quiz-box .Question-text{
+   font-size: 24px;
+   font-weight: 500;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.option-list
+.option{
+   width: 100%;
+   padding: 12px;
+   background: transparent;
+   border-radius: 4px;
+   font-size: 17px;
+   margin: 15px 0;
+   cursor: pointer;
+   border: 1px solid slategrey;
+   transition: 0.3s;
+
+}
+
+.option-list .option:hover{
+   background:rgba(255, 255, 255, 0.1);
+   border-color:rgba(255, 255, 255, 0.1);
+   border: 1px solid slategrey;
+}
+.option-list .option.correct{
+   background: #09001d;
+   color: #00a63d;
+   border-color: #00a63d;
+}
+.option-list .option.incorrect{
+   background: #09001d;
+   color: #a60045;
+   border-color: #a60045;
+}
+.option-list .option.disabled{
+    pointer-events: none;
+}
+.quiz-footer{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid slategrey;
+      padding-top: 20px;
+}
+.quiz-footer .next-btn{
+   height: 30px;
+   width: 100px;
+   background-color: slategrey;
+   border: none;
+   border-radius: 0.2rem;
+   cursor: pointer;
+   transition: 0.5s;
+   /* position: relative; */
+}
+.quiz-footer .next-btn.active:hover{
+   background-color: #1b99f2;
+   border-color: #0095ff;
+}
+.quiz-footer .next-btn.active{
+   pointer-events: auto;
+   background-color: #3ba4ef;
+   border-color: #27a3fb;
+}
+.quiz-section .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid slategrey;
+    border-radius: 0.3rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.quiz-section .result-box.active{
+   opacity: 1;
+   pointer-events: auto;
+   transform: translate(-50%,-50%) scale(1);
+}
+
+.result-box h2{
+   font-size: 32px;
+   color: #fff;
+   text-decoration: none;
+   font-weight: 700;
+   filter: drop-shadow(0 0 5px black);
+}
+.result-box .persentage-container{
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 20px 0 40px;
+}
+.persentage-container .circular-progress{
+   position: relative;
+   height: 250px;
+   width: 250px;
+   background:conic-gradient(#0095ff 3.6deg, rgba(141, 139, 139, 0.448)  0deg);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+.persentage-container .circular-progress::before{
+   content: '';
+   position: absolute;
+   width: 210px;
+   height: 210px;
+   background:black;
+   border-radius: 50%;
+
+}
+.circular-progress .progress-value{
+   position: relative;
+   font-size: 35px;
+   font-weight: 700;
+}
+.score-text{
+   font-size: 26px;
+   font-weight: 600;
+   margin-top: 20px;
+}
+.result-box buttons{
+   display: flex;
+}
+.buttons button{
+   width:130px;
+   height:47px;
+   background: slategrey;
+   border: 2px solid slategray;
+   outline: none;
+   border-radius: 0.2rem;
+   margin-left: 15px;
+   cursor: pointer;
+   font-size: 15px;
+   font-weight: 500;
+   transition: .5s;
+}
+
+.buttons button:nth-child(1):hover{
+   background: #0095ff;
+   border: 2px solid #0095ff;
+}
+.buttons button:nth-child(2){
+   background: transparent;
+   color: slategrey;
+}
+
+.buttons button:nth-child(2):hover{
+   background: #0095ff;
+   color: rgb(0, 0, 0);
+   border: 2px solid  #0095ff;
+}
